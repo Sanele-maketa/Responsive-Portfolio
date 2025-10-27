@@ -50,6 +50,7 @@ body {
     text-shadow: 0 0 25px var(--main-color);
 }
 .navbar a {
+    display: inline-block;
     font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
@@ -71,7 +72,6 @@ body {
 section {
     min-height: 100vh;
     padding: 10rem 12% 10rem;
-
 }
 .home {
     display: flex;
@@ -349,112 +349,160 @@ span {
 ::-webkit-scrollbar-track {
     background-color: var(--main-color);
 }
+
 .skills {
-    background: var(--bg-color);
-    color: black;
+    padding: 100px 15px;
+    background: var(--second-bg-color);
 }
-.skills h2{
-    margin-bottom: 5rem;
-    color: white;
+.sub-title {
+    text-align: center;
+    font-size: 50px;
 }
-.skill-container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    gap: 2.5rem;
+.container1{
+    width: 600px;
+    height: 500px;
+    padding: 75px 90px;
+    margin-left: 120px;
 }
-.skill-box {
+.heading1{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+}
+.bar{
+    font-size: 23px;
+}
+
+.Technical-bars .bar{
+    margin-top: 40px 0 ;
+}
+.Technical-bars .bar:first-child {
+    margin-top: 0;
+}
+.Technical-bars .bar:last-child{
+    margin-bottom: 0;
+}
+.Technical-bars .bar .info{
+    margin-bottom: 5px;
+}
+.Technical-bars .bar .info span{
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+.Technical-bars .bar .progress-line{
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: var(--bg-color);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+.Technical-bars .bar .progress-line  span{
+    height: 100%;
     background-color: var(--main-color);
-    height: 300px;
-    border-radius: 3rem;
-    border: 5px solid transparent;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
 }
-.skill-box:hover {
-    background: white;
-    color: black;
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
+.progress-line .html span{
+    width: 90%;
 }
-.skill-box .skill-info {
+.progress-line .css span{
+    width: 70%;
+}
+.progress-line .javascript span{
+    width: 75%;
+}
+.progress-line .bootstrap span{
+    width: 80%;
+}
+.progress-line .react span{
+    width: 60%;
+}
+.progress-line span::after{
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+.progress-line.html span::after{
+    content: "90%";
+}
+.progress-line.css span::after{
+    content: "70%";
+}
+.progress-line.javascript span::after{
+    content: "80%";
+}
+.progress-line.bootstrap span::after{
+    content: "90%";
+}
+.progress-line.react span::after{
+    content: "60%";
+}
+.progress-line span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+.radial-bars{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 5rem 5rem;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
 }
-.skill-info h4 {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 2;
+.radial-bars .radial-bar{
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
 }
-.skill-info p{
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
+.radial-bars .radial-bar svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px;
+    height: 1;
 }
 .projects{
     background: var(--second-bg-color);
 }
-.projects-box{
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.projects .heading{
-    margin-bottom: 5rem;
-}
-.project-item img{
-    width: 15rem;
-    border-radius: 50%;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-}
-.wrapper{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 3rem;
-}
-.project-item{
-    min-height: 550px;
-    max-width: 450px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 3px solid rgba(238, 238, 238, 0.2);
-    border-radius: 2rem;
-    margin: 0 2rem;
-    padding: 30px 60px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1.5rem;
-    color: white;
-    transition: 0.4s ease-in-out;
-}
-.project-item:hover{
-    border: 3px solid var(--main-color);
-    transform: translate(-10px) scale(1.03);
-    box-shadow: 0 0 50px var(--main-color);
-}
-.project-item h2{
-    font-size: 2.8rem;
-}
-.project-item p{
-    font-size: 1.3rem;
-}
-#star{
-    color: gold;
-    font-size: 2rem;
-}
+
 .contact{
     background-color: var(--bg-color);
 }
