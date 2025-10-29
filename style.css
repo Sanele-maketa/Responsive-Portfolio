@@ -74,6 +74,7 @@ section {
     padding: 10rem 12% 10rem;
 }
 .home {
+    background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
