@@ -352,13 +352,14 @@ span {
 
 .skills {
     padding: 100px 15px;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 .sub-title {
     text-align: center;
     font-size: 50px;
 }
 .container1{
+display: inline;
     width: 600px;
     height: 500px;
     padding: 75px 90px;
@@ -567,6 +568,7 @@ span {
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
+
 .projects{
     background: var(--second-bg-color);
 }
