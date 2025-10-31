@@ -94,6 +94,9 @@ span {
 .logo span {
     color: var(--main-color);
 }
+.home-content{
+    color: white;
+}
 .home-content h3 {
     margin-bottom: 2rem;
     margin-top: 1rem;
@@ -258,6 +261,7 @@ span {
     }
 }
 .heading {
+    color: var(--text-color);
     font-size: 8rem;
     text-align: center;
     margin: 5rem 0;
@@ -354,6 +358,7 @@ span {
 .skills {
     padding: 100px 15px;
     background: var(--bg-color);
+    color: var(--text-color);
 }
 .sub-title {
     text-align: center;
@@ -570,10 +575,57 @@ display: inline;
     opacity: 0;
 }
 
-.projects{
+.portfolio{
     background: var(--second-bg-color);
+    color: var(--text-color);
 }
 
+.main-text{
+    padding-top: 10px;
+    margin-top: 30px;
+}
+.main-text h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+}
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(359px, auto));
+}
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.row img{
+    min-height: 450px;
+    max-width: 500px;
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+.row img:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.row h3{
+    font-size: 15px;
+}
+.row p{
+    font-size: 15px;
+    color: var(--text-color);
+}
 .contact{
     background-color: var(--bg-color);
 }
